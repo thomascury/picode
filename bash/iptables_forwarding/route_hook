@@ -1,0 +1,71 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+  sudo $0 $*
+  exit $?
+fi
+
+function SCRIPT_PATH {
+  pushd . > /dev/null
+  SCRIPT_PATH="${BASH_SOURCE[0]}";
+  if ([ -h "${SCRIPT_PATH}" ]) then
+    while([ -h "${SCRIPT_PATH}" ]) do cd `dirname "$SCRIPT_PATH"`; SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
+  fi
+  cd `dirname ${SCRIPT_PATH}` > /dev/null
+  SCRIPT_PATH=`pwd`;
+  popd  > /dev/null
+
+  echo $SCRIPT_PATH
+}
+
+function STAMP {
+  printf "[$(date +'%Y%m%d%H%M%S')] route_hook: "
+}
+
+logfile="$(SCRIPT_PATH)/logfile"
+
+ip=$2
+dev=$4
+
+case $1 in
+  local)
+    type=add
+    ;;
+  Deleted)
+    if [ "$ip" == "broadcast" -o "$ip" == "local" ]; then
+      # printf "$(STAMP)Replicate calls. Ignoring...\n" | tee -a $logfile
+      exit 1
+    fi
+    type=del
+    ;;
+  *)
+    # printf "$(STAMP)Replicate calls. Ignoring...\n" | tee -a $logfile
+    exit 1
+    ;;
+esac
+
+dest_if=$(ip r |grep default|cut -d' ' -f5)
+if [ "x$dest_if" == "x" ]; then
+  printf "$(STAMP)Destination interface is unknown. Exiting...\n" | tee -a $logfile
+  exit 2
+fi
+
+printf "$dest_if\n" > /tmp/iptables_forward.out
+
+
+if [ "$dev" != "$dest_if" ]; then
+  case $type in
+    add)
+      printf "$(STAMP)Adding interface $dev to source forwarding\n" | tee -a $logfile
+      printf "$dev\n" >> /tmp/iptables_forward.in
+      ;;
+    del)
+      printf "$(STAMP)No action defined for route deletion. Exiting...\n" | tee -a $logfile
+      exit 3
+      ;;
+  esac
+fi
+
+printf "$(STAMP)Route change detected on interface $dev. Tiggering iptables forwarding...\n" | tee -a $logfile
+$(SCRIPT_PATH)/forward_script
+

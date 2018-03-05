@@ -1,0 +1,44 @@
+#!/bin/bash
+
+function SCRIPT_PATH {
+  pushd . > /dev/null
+  SCRIPT_PATH="${BASH_SOURCE[0]}";
+  if ([ -h "${SCRIPT_PATH}" ]) then
+    while([ -h "${SCRIPT_PATH}" ]) do cd `dirname "$SCRIPT_PATH"`; SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
+  fi
+  cd `dirname ${SCRIPT_PATH}` > /dev/null
+  SCRIPT_PATH=`pwd`;
+  popd  > /dev/null
+
+  echo $SCRIPT_PATH
+}
+
+logfile="$(SCRIPT_PATH)/logfile"
+printf "\n[$(date +'%Y%m%d%H%M%S')] dhcp_hook\n" | tee -a $logfile
+
+self=$0
+event_type=$1
+ip=$2
+mac=$3
+host_name=$4
+
+ip_root=${ip:0:6}
+
+case $ip_root in
+  10.4.0)
+    source_if='usb0'
+    ;;
+  10.4.1)
+    source_if='wlan0'
+    ;;
+  *)
+    printf "Source interface undefined. Exiting...\n" | tee -a $logfile
+    exit 2
+    ;;
+esac
+
+printf "$source_if" >> /tmp/iptables_forward.in
+
+printf "DHCPD gave an IP on interface $source_if. Triggering iptables forwarding...\n" | tee -a $logfile
+$(SCRIPT_PATH)/forward_script
+

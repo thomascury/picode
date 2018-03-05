@@ -1,0 +1,461 @@
+
+[20171027121637] route_hook
+Deleted
+
+[20171027121638] route_hook
+10.5.0.0/24
+
+[20171027121638] route_hook
+dev
+
+[20171027121638] route_hook
+usb0
+
+[20171027121638] route_hook
+proto
+
+[20171027121638] route_hook
+kernel
+
+[20171027121639] route_hook
+scope
+
+[20171027121639] route_hook
+link
+
+[20171027121639] route_hook
+src
+
+[20171027121639] route_hook
+10.5.0.1
+
+[20171027121639] route_hook
+Deleted
+
+[20171027121639] route_hook
+broadcast
+
+[20171027121639] route_hook
+10.5.0.255
+
+[20171027121639] route_hook
+dev
+
+[20171027121639] route_hook
+usb0
+
+[20171027121639] route_hook
+table
+
+[20171027121639] route_hook
+local
+
+[20171027121640] route_hook
+proto
+
+[20171027121640] route_hook
+kernel
+
+[20171027121640] route_hook
+scope
+
+[20171027121640] route_hook
+link
+
+[20171027121640] route_hook
+src
+
+[20171027121640] route_hook
+10.5.0.1
+
+[20171027121640] route_hook
+Deleted
+
+[20171027121640] route_hook
+broadcast
+
+[20171027121640] route_hook
+10.5.0.0
+
+[20171027121640] route_hook
+dev
+
+[20171027121640] route_hook
+usb0
+
+[20171027121641] route_hook
+table
+
+[20171027121641] route_hook
+local
+
+[20171027121641] route_hook
+proto
+
+[20171027121641] route_hook
+kernel
+
+[20171027121641] route_hook
+scope
+
+[20171027121641] route_hook
+link
+
+[20171027121641] route_hook
+src
+
+[20171027121641] route_hook
+10.5.0.1
+
+[20171027121641] route_hook
+Deleted
+
+[20171027121641] route_hook
+local
+
+[20171027121641] route_hook
+10.5.0.1
+
+[20171027121642] route_hook
+dev
+
+[20171027121642] route_hook
+usb0
+
+[20171027121642] route_hook
+table
+
+[20171027121642] route_hook
+local
+
+[20171027121642] route_hook
+proto
+
+[20171027121642] route_hook
+kernel
+
+[20171027121642] route_hook
+scope
+
+[20171027121642] route_hook
+host
+
+[20171027121642] route_hook
+src
+
+[20171027121642] route_hook
+10.5.0.1
+
+[20171027121806] route_hook
+local
+
+[20171027121806] route_hook
+10.5.0.1
+
+[20171027121806] route_hook
+dev
+
+[20171027121806] route_hook
+usb0
+
+[20171027121806] route_hook
+table
+
+[20171027121806] route_hook
+local
+
+[20171027121807] route_hook
+proto
+
+[20171027121807] route_hook
+kernel
+
+[20171027121807] route_hook
+scope
+
+[20171027121807] route_hook
+host
+
+[20171027121807] route_hook
+src
+
+[20171027121807] route_hook
+10.5.0.1
+
+[20171027121807] route_hook
+10.5.0.0/24
+
+[20171027121807] route_hook
+dev
+
+[20171027121807] route_hook
+usb0
+
+[20171027121807] route_hook
+proto
+
+[20171027121808] route_hook
+kernel
+
+[20171027121808] route_hook
+scope
+
+[20171027121808] route_hook
+link
+
+[20171027121808] route_hook
+src
+
+[20171027121808] route_hook
+10.5.0.1
+
+[20171027121808] route_hook
+broadcast
+
+[20171027121808] route_hook
+10.5.0.0
+
+[20171027121808] route_hook
+dev
+
+[20171027121808] route_hook
+usb0
+
+[20171027121808] route_hook
+table
+
+[20171027121808] route_hook
+local
+
+[20171027121809] route_hook
+proto
+
+[20171027121809] route_hook
+kernel
+
+[20171027121809] route_hook
+scope
+
+[20171027121809] route_hook
+link
+
+[20171027121809] route_hook
+src
+
+[20171027121809] route_hook
+10.5.0.1
+
+[20171027121809] route_hook
+broadcast
+
+[20171027121809] route_hook
+10.5.0.255
+
+[20171027121809] route_hook
+dev
+
+[20171027121809] route_hook
+usb0
+
+[20171027121809] route_hook
+table
+
+[20171027121810] route_hook
+local
+
+[20171027121810] route_hook
+proto
+
+[20171027121810] route_hook
+kernel
+
+[20171027121810] route_hook
+scope
+
+[20171027121810] route_hook
+link
+
+[20171027121810] route_hook
+src
+
+[20171027121810] route_hook
+10.5.0.1
+
+[20171027123135] route_hook
+Deleted 10.5.0.0/24 dev usb0 proto kernel scope link src 10.5.0.1
+
+[20171027123135] route_hook
+Deleted broadcast 10.5.0.255 dev usb0 table local proto kernel scope link src 10.5.0.1
+
+[20171027123135] route_hook
+Deleted broadcast 10.5.0.0 dev usb0 table local proto kernel scope link src 10.5.0.1
+
+[20171027123135] route_hook
+Deleted local 10.5.0.1 dev usb0 table local proto kernel scope host src 10.5.0.1
+
+[20171027123251] route_hook
+local 10.5.0.1 dev usb0 table local proto kernel scope host src 10.5.0.1
+
+[20171027123252] route_hook
+10.5.0.0/24 dev usb0 proto kernel scope link src 10.5.0.1
+
+[20171027123252] route_hook
+broadcast 10.5.0.0 dev usb0 table local proto kernel scope link src 10.5.0.1
+
+[20171027123252] route_hook
+broadcast 10.5.0.255 dev usb0 table local proto kernel scope link src 10.5.0.1
+[20171027131331] route_hook: No action defined for route deletion. Exiting...[20171027131332] route_hook: Replicate calls. Ignoring...
+[20171027131332] route_hook: Replicate calls. Ignoring...
+[20171027131332] route_hook: Replicate calls. Ignoring...
+[20171027131414] route_hook: Adding interface usb0 to source forwarding
+Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027131414] route_hook: Replicate calls. Ignoring...
+[20171027131414] route_hook: Replicate calls. Ignoring...
+[20171027131414] route_hook: Replicate calls. Ignoring...
+[20171027132549] route_hook: No action defined for route deletion. Exiting...
+[20171027132550] route_hook: Replicate calls. Ignoring...
+[20171027132550] route_hook: Replicate calls. Ignoring...
+[20171027132550] route_hook: Replicate calls. Ignoring...
+[20171027132557] route_hook: Adding interface usb0 to source forwarding
+[20171027132557] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027132603] route_hook: Replicate calls. Ignoring...
+[20171027132603] route_hook: Replicate calls. Ignoring...
+[20171027132603] route_hook: Replicate calls. Ignoring...
+[20171027133304] route_hook: No action defined for route deletion. Exiting...
+[20171027133304] route_hook: Replicate calls. Ignoring...
+[20171027133304] route_hook: Replicate calls. Ignoring...
+[20171027133305] route_hook: Replicate calls. Ignoring...
+[20171027133312] route_hook: Adding interface usb0 to source forwarding
+[20171027133312] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027133312] route_hook: Replicate calls. Ignoring...
+[20171027133312] route_hook: Replicate calls. Ignoring...
+[20171027133313] route_hook: Replicate calls. Ignoring...
+[20171027133731] route_hook: No action defined for route deletion. Exiting...
+[20171027133732] route_hook: Replicate calls. Ignoring...
+[20171027133732] route_hook: Replicate calls. Ignoring...
+[20171027133732] route_hook: Replicate calls. Ignoring...
+[20171027133736] route_hook: Adding interface usb0 to source forwarding
+[20171027133736] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027133737] route_hook: Replicate calls. Ignoring...
+[20171027133737] route_hook: Replicate calls. Ignoring...
+[20171027133737] route_hook: Replicate calls. Ignoring...
+[20171027134002] route_hook: No action defined for route deletion. Exiting...
+[20171027134002] route_hook: Replicate calls. Ignoring...
+[20171027134002] route_hook: Replicate calls. Ignoring...
+[20171027134003] route_hook: Replicate calls. Ignoring...
+[20171027134007] route_hook: Adding interface usb0 to source forwarding
+[20171027134007] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027134008] forward_script: Cleaning iptables policies before applying updated forwarding...[20171027134008] forward_script: Setting forward policy from usb0 to wlan0[20171027134008] forward_script: Restore file does not exists. Creating from template...
+[20171027134008] forward_script: Done.
+[20171027134008] forward_script: Setting forward policy from usb0 to wlan0[20171027134008] forward_script: Done.
+[20171027134008] forward_script: Forwarding policies are set. Exiting...
+[20171027134008] route_hook: Replicate calls. Ignoring...
+[20171027134009] route_hook: Replicate calls. Ignoring...
+[20171027134009] route_hook: Replicate calls. Ignoring...
+[20171027140609] route_hook: No action defined for route deletion. Exiting...
+[20171027140609] route_hook: Replicate calls. Ignoring...
+[20171027140610] route_hook: Replicate calls. Ignoring...
+[20171027140610] route_hook: Replicate calls. Ignoring...
+[20171027140907] route_hook: Destination interface is unknown. Exiting...
+[20171027140908] route_hook: Destination interface is unknown. Exiting...
+[20171027140912] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171027140913] forward_script: Source interfaces undefined. Exiting...
+[20171027140913] route_hook: Replicate calls. Ignoring...
+[20171027140913] route_hook: Replicate calls. Ignoring...
+[20171027140914] route_hook: Replicate calls. Ignoring...
+[20171027140914] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171027140914] forward_script: Source interfaces undefined. Exiting...
+[20171027140915] route_hook: Replicate calls. Ignoring...
+[20171027140915] route_hook: Replicate calls. Ignoring...
+[20171027140916] route_hook: Adding interface usb0 to source forwarding
+[20171027140916] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027140916] forward_script: Cleaning iptables policies before applying updated forwarding...[20171027140917] forward_script: Setting forward policy from usb0 to wlan0[20171027140917] forward_script: Done.
+[20171027140917] forward_script: Forwarding policies are set. Exiting...
+[20171027140917] route_hook: Replicate calls. Ignoring...
+[20171027140918] route_hook: Replicate calls. Ignoring...
+[20171027140918] route_hook: Replicate calls. Ignoring...
+[20171027140918] route_hook: No action defined for route deletion. Exiting...
+[20171027140919] route_hook: Replicate calls. Ignoring...
+[20171027141427] route_hook: Adding interface usb0 to source forwarding
+[20171027141427] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027141428] forward_script: Cleaning iptables policies before applying updated forwarding...[20171027141428] forward_script: Setting forward policy from usb0 to wlan0[20171027141428] forward_script: Done.
+[20171027141428] forward_script: Setting forward policy from usb0 to wlan0[20171027141428] forward_script: Done.
+[20171027141428] forward_script: Forwarding policies are set. Exiting...
+[20171027144939] route_hook: Destination interface is unknown. Exiting...
+[20171027144941] route_hook: Destination interface is unknown. Exiting...
+[20171027144945] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171027144946] forward_script: Source interfaces undefined. Exiting...
+[20171027144947] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171027144948] forward_script: Source interfaces undefined. Exiting...
+[20171027144949] route_hook: Adding interface usb0 to source forwarding
+[20171027144949] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027144949] forward_script: Cleaning iptables policies before applying updated forwarding...
+[20171027144950] forward_script: Setting forward policy from usb0 to wlan0
+[20171027144950] forward_script: Done.
+[20171027144950] forward_script: Forwarding policies are set. Exiting...
+[20171027144951] route_hook: No action defined for route deletion. Exiting...
+[20171027155235] route_hook: Destination interface is unknown. Exiting...
+[20171027155237] route_hook: Destination interface is unknown. Exiting...
+[20171027155242] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171027155243] forward_script: Source interfaces undefined. Exiting...
+[20171027155244] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171027155245] forward_script: Source interfaces undefined. Exiting...
+[20171027155245] route_hook: Adding interface usb0 to source forwarding
+[20171027155246] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027155246] forward_script: Cleaning iptables policies before applying updated forwarding...
+[20171027155247] forward_script: Setting forward policy from usb0 to wlan0
+[20171027155247] forward_script: Done.
+[20171027155247] forward_script: Forwarding policies are set. Exiting...
+[20171027155248] route_hook: No action defined for route deletion. Exiting...
+[20171027211522] route_hook: Destination interface is unknown. Exiting...
+[20171027211523] route_hook: Destination interface is unknown. Exiting...
+[20171027211528] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171027211528] forward_script: Source interfaces undefined. Exiting...
+[20171027211530] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171027211530] forward_script: Source interfaces undefined. Exiting...
+[20171027211531] route_hook: Adding interface usb0 to source forwarding
+[20171027211531] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171027211532] forward_script: Cleaning iptables policies before applying updated forwarding...
+[20171027211532] forward_script: Setting forward policy from usb0 to wlan0
+[20171027211533] forward_script: Done.
+[20171027211533] forward_script: Forwarding policies are set. Exiting...
+[20171027211534] route_hook: No action defined for route deletion. Exiting...
+[20171028074100] route_hook: Destination interface is unknown. Exiting...
+[20171028074100] route_hook: Destination interface is unknown. Exiting...
+[20171028074104] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171028074105] forward_script: Source interfaces undefined. Exiting...
+[20171028074106] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171028074106] forward_script: Source interfaces undefined. Exiting...
+[20171028074107] route_hook: Adding interface usb0 to source forwarding
+[20171028074107] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171028074107] forward_script: Cleaning iptables policies before applying updated forwarding...
+[20171028074108] forward_script: Setting forward policy from usb0 to wlan0
+[20171028074108] forward_script: Done.
+[20171028074109] forward_script: Forwarding policies are set. Exiting...
+[20171028074109] route_hook: No action defined for route deletion. Exiting...
+[20171028101716] route_hook: Destination interface is unknown. Exiting...
+[20171028101720] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171028101721] forward_script: Source interfaces undefined. Exiting...
+[20171028101722] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171028101722] forward_script: Source interfaces undefined. Exiting...
+[20171028101715] route_hook: Destination interface is unknown. Exiting...
+[20171028101716] route_hook: Destination interface is unknown. Exiting...
+[20171028101720] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171028101721] forward_script: Source interfaces undefined. Exiting...
+[20171028101722] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171028101723] forward_script: Source interfaces undefined. Exiting...
+[20171028101723] route_hook: Adding interface usb0 to source forwarding
+[20171028101724] route_hook: Route change detected on interface usb0. Tiggering iptables forwarding...
+[20171028101724] forward_script: Cleaning iptables policies before applying updated forwarding...
+[20171028101725] forward_script: Setting forward policy from usb0 to wlan0
+[20171028101725] forward_script: Done.
+[20171028101725] forward_script: Forwarding policies are set. Exiting...
+[20171028101726] route_hook: No action defined for route deletion. Exiting...
+[20171028131121] route_hook: Destination interface is unknown. Exiting...
+[20171028131126] route_hook: Destination interface is unknown. Exiting...
+[20171028131127] route_hook: Destination interface is unknown. Exiting...
+[20171028131202] route_hook: Destination interface is unknown. Exiting...
+[20171028131208] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171028131208] forward_script: Source interfaces undefined. Exiting...
+[20171028131209] route_hook: Route change detected on interface wlan0. Tiggering iptables forwarding...
+[20171028131209] forward_script: Source interfaces undefined. Exiting...

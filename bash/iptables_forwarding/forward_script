@@ -1,0 +1,75 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+  sudo $0 $*
+  exit $?
+fi
+
+function SCRIPT_PATH {
+  pushd . > /dev/null
+  SCRIPT_PATH="${BASH_SOURCE[0]}";
+  if ([ -h "${SCRIPT_PATH}" ]) then
+    while([ -h "${SCRIPT_PATH}" ]) do cd `dirname "$SCRIPT_PATH"`; SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
+  fi
+  cd `dirname ${SCRIPT_PATH}` > /dev/null
+  SCRIPT_PATH=`pwd`;
+  popd  > /dev/null
+
+  echo $SCRIPT_PATH
+}
+
+function STAMP {
+  printf "[$(date +'%Y%m%d%H%M%S')] forward_script: "
+}
+
+restore_dir="$(SCRIPT_PATH)/restore_scripts/"
+restore_file_template="$restore_dir/iptables.ipv4.nat.template"
+logfile="$(SCRIPT_PATH)/logfile"
+
+source_ifs=$(cat /tmp/iptables_forward.in)
+dest_if=$(cat /tmp/iptables_forward.out)
+
+if [ "x$source_ifs" == "x" ];then
+  printf "$(STAMP)Source interfaces undefined. Exiting...\n" | tee -a $logfile
+  exit 1
+fi
+
+if [ "x$dest_if" == "x" ];then
+  printf "$(STAMP)Destination interface undefined. Exiting...\n" | tee -a $logfile
+  exit 1
+fi
+
+printf "$(STAMP)Cleaning iptables policies before applying updated forwarding...\n" | tee -a $logfile
+iptables -F
+iptables -X
+iptables -t nat -F
+iptables -t nat -X
+iptables -t mangle -F
+iptables -t mangle -X
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+
+printf "$(STAMP)Applying new forwarding policies\n"
+#Loop start
+while read source_if; do
+  if [ "$source_if" == "$dest_if" ]; then
+    printf "$(STAMP)Interface $source_if is the same as destination interface. Ignoring interface $source_if...\n" | tee -a $logfile
+    continue
+  else
+    printf "$(STAMP)Setting forward policy from $source_if to $dest_if\n" | tee -a $logfile
+  fi
+
+  restore_file="$restore_dir/iptables.ipv4.nat.$source_if-to-$dest_if"
+  
+  if [ ! -f $restore_file ];then
+    printf "$(STAMP)Restore file does not exists. Creating from template...\n" | tee -a $logfile
+    sed -e "s/#IN#/$source_if/g" $restore_file_template | sed -e "s/#OUT#/$dest_if/g" > $restore_file
+  fi
+  
+  iptables-restore $restore_file 2>&1 | tee -a $logfile
+  printf "$(STAMP)Done.\n" | tee -a $logfile
+done < /tmp/iptables_forward.in
+
+printf "$(STAMP)Forwarding policies are set. Exiting...\n" | tee -a $logfile
+
